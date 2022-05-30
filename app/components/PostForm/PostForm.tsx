@@ -2,7 +2,7 @@ import type { Props } from "./types";
 
 function PostForm({ error, fields, method = "post", ...props }: Props) {
   return (
-    <form method={method} className='flex flex-col gap-4'>
+    <form method={method} {...props} className='flex flex-col gap-4'>
       <div className='flex flex-col'>
         <label htmlFor='title' className='mb-2 text-gray-600'></label>
         <input
@@ -28,7 +28,7 @@ function PostForm({ error, fields, method = "post", ...props }: Props) {
           <p className='text-red-500'>{error.fieldsError?.body}</p>
         )}
       </div>
-      {error.formError && <p className='text-red-500'>{error.formError}</p>}
+      {/* {error.formError && <p className='text-red-500'>{error.formError}</p>} */}
       <button
         type='submit'
         className='transition rounded text-blue-700 font-bold py-4 px-6 transparent hover:gb-gray-100'
